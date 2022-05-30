@@ -7,6 +7,9 @@ import com.oliferov.test_for_reshenie_soft.data.network.ApiService
 import com.oliferov.test_for_reshenie_soft.domain.UserPostsRepository
 import com.oliferov.test_for_reshenie_soft.domain.model.News
 import com.oliferov.test_for_reshenie_soft.domain.model.User
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class UserPostsRepositoryImpl(
     val apiService: ApiService,
@@ -24,6 +27,8 @@ class UserPostsRepositoryImpl(
         val listUserModel = dao.getAllUsers().map {
             userMapper.mapUserDbModelToUserModel(it)
         }
+
+
         return listUserModel
     }
 
