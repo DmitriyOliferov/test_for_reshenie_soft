@@ -1,6 +1,11 @@
-package com.oliferov.test_for_reshenie_soft.domain.model
+package com.oliferov.test_for_reshenie_soft.data.database.DbModel
 
-data class User(
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "users")
+data class UserDbModel(
+    @PrimaryKey
     val id: Int,
     val name: String,
     val username: String,

@@ -1,5 +1,5 @@
 package com.oliferov.test_for_reshenie_soft.domain
 
-class GetAllUsersUseCase(private val repository: UserFieldRepository) {
+class GetAllUsersUseCase(private val repository: UserPostsRepository) {
     suspend operator fun invoke() = repository.getAllUsers()
 }
