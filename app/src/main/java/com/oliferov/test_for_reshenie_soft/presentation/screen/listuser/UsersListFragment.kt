@@ -7,12 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.oliferov.test_for_reshenie_soft.R
 import com.oliferov.test_for_reshenie_soft.databinding.FragmentUsersListBinding
 import com.oliferov.test_for_reshenie_soft.presentation.screen.UserPostsApp
 import com.oliferov.test_for_reshenie_soft.presentation.screen.ViewModelFactory
+import com.oliferov.test_for_reshenie_soft.presentation.screen.listnews.NewsListFragment
 import javax.inject.Inject
 
 class UsersListFragment : Fragment() {
@@ -72,7 +73,19 @@ class UsersListFragment : Fragment() {
                 false
             )
         }
+        usersListAdapter.onUserClickListener = object : UsersListAdapter.OnUserClickListener{
+            override fun onUserClick(id: Int) {
+                launchNewsFragment(id)
+            }
+        }
+    }
 
+    private fun launchNewsFragment(id: Int) {
+        findNavController()
+            .navigate(
+                UsersListFragmentDirections
+                    .actionUsersListFragmentToNewsListFragment(id)
+            )
     }
 
     private fun createViewModel() {

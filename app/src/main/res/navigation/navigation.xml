@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/usersListFragment">
+
+    <fragment
+        android:id="@+id/usersListFragment"
+        android:name="com.oliferov.test_for_reshenie_soft.presentation.screen.listuser.UsersListFragment"
+        android:label="fragment_users_list"
+        tools:layout="@layout/fragment_users_list" >
+        <action
+            android:id="@+id/action_usersListFragment_to_newsListFragment"
+            app:destination="@id/newsListFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsListFragment"
+        android:name="com.oliferov.test_for_reshenie_soft.presentation.screen.listnews.NewsListFragment"
+        android:label="fragment_news_list"
+        tools:layout="@layout/fragment_news_list" >
+        <argument
+            android:name="uid"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+</navigation>

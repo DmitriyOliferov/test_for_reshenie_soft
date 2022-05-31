@@ -1,5 +1,6 @@
 package com.oliferov.test_for_reshenie_soft.presentation.screen.listnews
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,9 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.oliferov.test_for_reshenie_soft.R
 import com.oliferov.test_for_reshenie_soft.databinding.FragmentNewsListBinding
+import com.oliferov.test_for_reshenie_soft.presentation.screen.UserPostsApp
 import com.oliferov.test_for_reshenie_soft.presentation.screen.ViewModelFactory
 import javax.inject.Inject
 
@@ -25,10 +25,19 @@ class NewsListFragment : Fragment() {
     private lateinit var viewModel: NewsListViewModel
 
     @Inject
-    private lateinit var viewModelFactory: ViewModelFactory
+    lateinit var viewModelFactory: ViewModelFactory
+
+    private val component by lazy {
+        (requireActivity().application as UserPostsApp).component
+    }
 
     private val newListAdapter by lazy {
         NewsListAdapter()
+    }
+
+    override fun onAttach(context: Context) {
+        component.inject(this)
+        super.onAttach(context)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,6 +51,7 @@ class NewsListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        uid = NewsListFragmentArgs.fromBundle(requireArguments()).uid
         _binding = FragmentNewsListBinding.inflate(
             inflater,
             container,
@@ -78,15 +88,5 @@ class NewsListFragment : Fragment() {
                 false
             )
         }
-    }
-
-    companion object {
-        @JvmStatic
-        fun newInstance(uid: Int) =
-            NewsListFragment().apply {
-                arguments = Bundle().apply {
-                    putInt(ARG_UID, uid)
-                }
-            }
     }
 }

@@ -10,10 +10,10 @@ import com.oliferov.test_for_reshenie_soft.data.database.DbModel.UserDbModel
 @Dao
 interface UserPostsDao {
 
-    @Query("SELECT * FROM users ORDER BY id DESC")
+    @Query("SELECT * FROM users ORDER BY id")
     fun getAllUsers(): List<UserDbModel>
 
-    @Query("SELECT * FROM news WHERE id == :uid")
+    @Query("SELECT * FROM news WHERE userId == :uid")
     fun getAllUserNews(uid: Int): List<NewsDbModel>
 
     @Insert(entity = UserDbModel::class, onConflict = OnConflictStrategy.REPLACE)

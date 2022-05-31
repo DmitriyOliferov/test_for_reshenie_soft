@@ -9,6 +9,8 @@ import com.oliferov.test_for_reshenie_soft.databinding.UserItemBinding
 import com.oliferov.test_for_reshenie_soft.domain.model.User
 
 class UsersListAdapter : ListAdapter<User, UsersListViewHolder>(UserListDiffCallback()) {
+    var onUserClickListener: OnUserClickListener? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UsersListViewHolder {
         val binding = UserItemBinding.inflate(
             LayoutInflater.from(parent.context),
@@ -35,8 +37,16 @@ class UsersListAdapter : ListAdapter<User, UsersListViewHolder>(UserListDiffCall
                 tvCompanyName.text = companyName
                 tvCompanyCatchphrase.text = companyCatchPhrase
                 tvCompanyBs.text = companyBs
+                tvId.text = id.toString()
+                root.setOnClickListener {
+                    onUserClickListener?.onUserClick(id)
+                }
             }
         }
+    }
+
+    interface OnUserClickListener {
+        fun onUserClick(id: Int)
     }
 }
 

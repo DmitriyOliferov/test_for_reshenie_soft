@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.fragment.app.FragmentContainerView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragment_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:name="com.oliferov.test_for_reshenie_soft.presentation.screen.listuser.UsersListFragment"
-    tools:context=".presentation.screen.MainActivity"/>
+    android:name="androidx.navigation.fragment.NavHostFragment"
+    tools:context=".presentation.screen.MainActivity"
+    app:navGraph="@navigation/navigation" />
