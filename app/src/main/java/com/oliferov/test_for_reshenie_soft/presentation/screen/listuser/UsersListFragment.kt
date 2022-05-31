@@ -9,11 +9,9 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.oliferov.test_for_reshenie_soft.R
 import com.oliferov.test_for_reshenie_soft.databinding.FragmentUsersListBinding
 import com.oliferov.test_for_reshenie_soft.presentation.screen.UserPostsApp
 import com.oliferov.test_for_reshenie_soft.presentation.screen.ViewModelFactory
-import com.oliferov.test_for_reshenie_soft.presentation.screen.listnews.NewsListFragment
 import javax.inject.Inject
 
 class UsersListFragment : Fragment() {

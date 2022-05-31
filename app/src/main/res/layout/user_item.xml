@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="20dp"
+    android:elevation="20dp"
     android:layout_margin="10dp">
 
 
@@ -12,125 +13,156 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="10dp"
         android:layout_margin="10dp">
 
         <TextView
             android:id="@+id/tv_name"
+            style="@style/text_users"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="tv_name" />
 
         <TextView
             android:id="@+id/tv_username"
+            style="@style/text_users"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_name"
             tools:text="tv_username" />
 
         <TextView
             android:id="@+id/tv_email"
+            style="@style/text_users"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_username"
             tools:text="tv_email" />
 
         <TextView
             android:id="@+id/tv_address_street"
+            style="@style/text_users"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_username"
             tools:text="tv_address_street" />
 
         <TextView
             android:id="@+id/tv_address_suite"
+            style="@style/text_users"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@id/tv_address_street"
             tools:text="vtv_address_suite" />
 
         <TextView
             android:id="@+id/tv_address_city"
+            style="@style/text_users"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@id/tv_address_suite"
             tools:text="tv_address_city" />
 
         <TextView
             android:id="@+id/tv_address_zipcode"
+            style="@style/text_users"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@id/tv_address_city"
             tools:text="tv_address_zipcode" />
 
         <TextView
             android:id="@+id/tv_address_geo_lat"
+            style="@style/text_users"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@id/tv_address_zipcode"
             tools:text="tv_address_geo_lat" />
 
         <TextView
             android:id="@+id/tv_address_geo_lng"
+            style="@style/text_users"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@id/tv_address_geo_lat"
             tools:text="tv_address_geo_lng" />
 
         <TextView
             android:id="@+id/tv_phone"
+            style="@style/text_users"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_email"
             tools:text="tv_phone" />
 
         <TextView
             android:id="@+id/tv_website"
+            style="@style/text_users"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_phone"
             tools:text="tv_website" />
 
         <TextView
             android:id="@+id/tv_company_name"
+            style="@style/text_users"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_website"
             tools:text="tv_company_name" />
 
         <TextView
             android:id="@+id/tv_company_catchphrase"
+            style="@style/text_users"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_company_name"
             tools:text="tv_company_catchphrase" />
 
         <TextView
             android:id="@+id/tv_company_bs"
+            style="@style/text_users"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_company_catchphrase"
             tools:text="tv_company_bs" />
-        <TextView
-            android:id="@+id/tv_id"
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_company_bs"
-            tools:text="id" />
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

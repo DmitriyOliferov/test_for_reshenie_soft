@@ -2,7 +2,7 @@ package com.oliferov.test_for_reshenie_soft.data.network.dto
 
 import com.google.gson.annotations.Expose
 
-class UserDto (
+class UserDto(
     @Expose
     val id: Int,
     @Expose

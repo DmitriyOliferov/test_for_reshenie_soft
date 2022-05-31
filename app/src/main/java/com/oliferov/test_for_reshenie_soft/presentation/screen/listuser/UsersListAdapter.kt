@@ -26,7 +26,7 @@ class UsersListAdapter : ListAdapter<User, UsersListViewHolder>(UserListDiffCall
             with(holder.binding) {
                 tvName.text = name
                 tvUsername.text = username
-                tvEmail.text = email
+                tvEmail.text =  email
                 tvAddressStreet.text = street
                 tvAddressSuite.text = suite
                 tvAddressZipcode.text = zipcode
@@ -37,7 +37,6 @@ class UsersListAdapter : ListAdapter<User, UsersListViewHolder>(UserListDiffCall
                 tvCompanyName.text = companyName
                 tvCompanyCatchphrase.text = companyCatchPhrase
                 tvCompanyBs.text = companyBs
-                tvId.text = id.toString()
                 root.setOnClickListener {
                     onUserClickListener?.onUserClick(id)
                 }

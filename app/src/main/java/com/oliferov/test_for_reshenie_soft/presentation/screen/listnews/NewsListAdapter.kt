@@ -24,8 +24,6 @@ class NewsListAdapter : ListAdapter<News, NewsListViewHolder>(NewsListDiffCallba
             with(holder.binding){
                 tvTitle.text = title
                 tvBody.text = body
-                tvId.text = id.toString()
-                tvUid.text = userId.toString()
             }
         }
     }
