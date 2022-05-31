@@ -13,7 +13,7 @@
         <action
             android:id="@+id/action_usersListFragment_to_newsListFragment"
             app:destination="@id/newsListFragment"
-            app:popUpToInclusive="false" />
+            app:popUpTo="@id/newsListFragment" />
     </fragment>
     <fragment
         android:id="@+id/newsListFragment"
