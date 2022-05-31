@@ -10,12 +10,13 @@ import com.oliferov.test_for_reshenie_soft.domain.model.User
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class UserPostsRepositoryImpl(
-    val apiService: ApiService,
-    val dao: UserPostsDao,
-    val newsMapper: NewsMapper,
-    val userMapper: UserMapper
+class UserPostsRepositoryImpl @Inject constructor(
+    private val apiService: ApiService,
+    private val dao: UserPostsDao,
+    private val newsMapper: NewsMapper,
+    private val userMapper: UserMapper
 ) : UserPostsRepository {
 
     override suspend fun getAllUsers(): List<User> {

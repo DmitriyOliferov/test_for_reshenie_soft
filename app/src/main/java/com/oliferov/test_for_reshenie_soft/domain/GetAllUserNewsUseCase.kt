@@ -1,5 +1,7 @@
 package com.oliferov.test_for_reshenie_soft.domain
 
-class GetAllUserNewsUseCase(private val repository: UserPostsRepository) {
+import javax.inject.Inject
+
+class GetAllUserNewsUseCase @Inject constructor(private val repository: UserPostsRepository) {
     suspend operator fun invoke(uid: Int) = repository.getAllUserNews(uid)
 }
